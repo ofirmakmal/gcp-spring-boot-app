@@ -11,6 +11,6 @@ public class HomeController {
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String showHomePage() {
-        return "<h2>version 1.0.7</h2><p>Hello everyone</p>";
+        return "<h2>version 1.0.8</h2><p>Hello everyone</p>";
     }
 }
