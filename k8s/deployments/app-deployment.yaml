@@ -1,7 +1,15 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: app
+  labels: 
+    name: application
+---
 kind: Deployment
 apiVersion: extensions/v1beta1
 metadata:
   name: app-deployment
+  namespace: app
 spec:
   replicas: 2
   template:
