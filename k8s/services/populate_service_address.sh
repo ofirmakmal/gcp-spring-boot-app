@@ -7,7 +7,7 @@
 FRONTEND_ADDRESS='';
 
 while [[ "e$FRONTEND_ADDRESS" == "e" ]];
-  do FRONTEND_ADDRESS=`kubectl describe service/app-service 2>/dev/null | grep "LoadBalancer\ Ingress" | cut -f2`;
+  do FRONTEND_ADDRESS=`kubectl describe service/app-service -n app 2>/dev/null | grep "LoadBalancer\ Ingress" | cut -f2`;
   printf ".";
 done;
 
