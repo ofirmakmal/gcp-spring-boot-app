@@ -54,17 +54,5 @@ podTemplate(label: 'jnlp', containers: [
         sh("kubectl apply -f k8s/deployments/")
         sh("kubectl apply -f k8s/services/")
       }
-
-      stage('Extract service IP address') {
-        // Execute and wait for external service to become available
-        sh("k8s/services/populate_service_address.sh")
-        // Read output from script above
-        def FRONTEND_ADDRESS=readFile('frontend_service_address').trim()
-      }
-
-      stage('Output service external address') {
-        sh("echo 'Application up and running on'")
-        sh("cat frontend_service_address")
-      }
   }
 }
